@@ -1,0 +1,21 @@
+Steps to Create Database:
+
+1: In CreateDatabase:
+
+In the top you see this section:
+
+CREATE DATABASE [Product]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'Product', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\Product_Primary.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'Product_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\Product_Primary.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+GO
+
+Change the 2 FILENAME to correspond with the folders on your PC.
+
+2: Use CreateDatabase
+3: Use Tables
+4: Use Functions
+5: Use InsertStatement
+6: Use DatabaseSecurity
