@@ -1,6 +1,28 @@
 USE [Product]
 GO
 
+/****** Object:  UserDefinedFunction [dbo].[GetAverageRating]    Script Date: 12/15/2019 9:22:43 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE FUNCTION [dbo].[GetAverageRating](@productId INT)
+RETURNS float
+AS
+BEGIN
+	DECLARE @ResultVar float
+
+	SELECT @ResultVar = SUM(CAST(Value AS float)) / COUNT(Value)
+	FROM Rating 
+	WHERE FK_ProductID = @productId
+
+	RETURN @ResultVar
+END
+GO
+
 /****** Object:  UserDefinedFunction [dbo].[CalculateTotalAmountCreditCard]    Script Date: 12/1/2019 10:02:08 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -111,20 +133,6 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE FUNCTION [dbo].[GetAverageRating](@productId INT)
-RETURNS float
-AS
-BEGIN
-	DECLARE @ResultVar float
-
-	SELECT @ResultVar = SUM(CAST(Value AS float)) / COUNT(Value)
-	FROM Rating 
-	WHERE FK_ProductID = @productId
-
-	RETURN @ResultVar
-END
-GO
-
 ALTER TABLE [dbo].[Customer]
    DROP COLUMN [TotalAmount]
 ALTER TABLE [dbo].[Customer]
@@ -151,9 +159,4 @@ GO
 ALTER TABLE [dbo].[Invoice]
    ADD [TAX]  AS ([dbo].[CalculateTotalPrice]([InvoiceId])*(0.25))
 
-GO
-ALTER TABLE [dbo].[Product]
-   DROP COLUMN [Average_Rating]
-GO
-ALTER TABLE [dbo].[Product]
-   ADD [Average_Rating] AS ([dbo].[GetAverageRating]([ProductID]))
+

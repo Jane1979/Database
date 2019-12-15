@@ -43,65 +43,65 @@ INSERT INTO Product ([Name], [Url], [Description] , Unitprice, Stock) VALUES ('L
 INSERT INTO Product ([Name], [Url], [Description] , Unitprice, Stock) VALUES ('The Evil Within', 'TheEvilWithin.jpg','Shinji Mikami, the father of survival horror, is back to direct The Evil Within™ - a game embodying the meaning of pure survival horror. Highly-crafted environments, horrifying anxiety, and an intricate story weave together to create an immersive world that will bring players to the height of tension. The Evil Within is in development for the Xbox One, Xbox 360, PlayStation 4, PlayStation 3, and PC and is slated for release in 2014.', 149, 42)
 INSERT INTO Product ([Name], [Url], [Description] , Unitprice, Stock) VALUES ('Natural Doctrine', 'NaturalDoctrine.jpg','Strategy role-playing gamers be ready, as this game will truly test your ability to conquer the evils that lurk in the sprawling networks of mines and ruins in the areas surrounding the fortress city of Feste. Seasoned explorers and novices alike venture underground into dangerous caves to collect the coveted material known as Pluton. During your first trip down into the depths of one of these mines, you and your new explorer friends quickly realize that things may be more dire than you had imagined as you encounter a brand-new type of evil lurking below the surface. You and your newfound friends must strategically defeat these new difficult foes and warn the kingdom of their presence before its too late.', 299, 5)
 
-INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email) VALUES ('Nygaard', 'Felix', 'Fynshovedvej 45', 7200, 'Grindsted', 71745077, 'FelixMNygaard@fakehotmail.com')
+INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email, [Password]) VALUES ('Nygaard', 'Felix', 'Fynshovedvej 45', 7200, 'Grindsted', 71745077, 'FelixMNygaard@fakehotmail.com', 'c9$BZL)RJx_!>T/\')
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK2350517892519221', 'Felix Nygaard', 5118209434961954, 03, 2023 , 156, IDENT_CURRENT('Customer'))
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK3850519553524835', 'Felix Nygaard', 4716312892045291, 07, 2023 , 473, IDENT_CURRENT('Customer'))
 
 
-INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email) VALUES ('Olesen', 'Anna', 'Møllebakken 36', 3650, 'Ølstykke', 81720510, 'AnnaMOlesen@fakehotmail.com')
+INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email, [Password]) VALUES ('Olesen', 'Anna', 'Møllebakken 36', 3650, 'Ølstykke', 81720510, 'AnnaMOlesen@fakehotmail.com', 'h24KjMU~\yv~,v&_')
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK3750516981359654', 'Anna Olesen', 5181895005045771, 02, 2020 , 560, IDENT_CURRENT('Customer'))
 
 
-INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email) VALUES ('Bruun', 'Alberte', 'Frørup Byvej 20', 1174, 'København K', 22990795, 'AlberteMBruun@fakehotmail.com')
+INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email, [Password]) VALUES ('Bruun', 'Alberte', 'Frørup Byvej 20', 1174, 'København K', 22990795, 'AlberteMBruun@fakehotmail.com', 'CBFpRjwH&x8DKfdR')
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK7650519218642418', 'Alberte Bruun', 4716067864474511, 05, 2021 , 075, IDENT_CURRENT('Customer'))
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK2050515699432113', 'Alberte Bruun', 4556614764265425, 10, 2023 , 410, IDENT_CURRENT('Customer'))
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK2650516288756184', 'Alberte Bruun', 5180766529239326, 08, 2023 , 897, IDENT_CURRENT('Customer'))
 
-INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email) VALUES ('Simonsen', 'Jonathan', 'Grønlandsgade 80', 1777, 'København V', 31468501, 'JonathanSSimonsen@fakehotmail.com')
+INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email, [Password]) VALUES ('Simonsen', 'Jonathan', 'Grønlandsgade 80', 1777, 'København V', 31468501, 'JonathanSSimonsen@fakehotmail.com', '4KsQvw?RLB+9v^NT')
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK3250517917543313', 'Jonathan Simonsen', 5422485731933216, 12, 2024 , 656, IDENT_CURRENT('Customer'))
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK8550516577698528', 'Jonathan Simonsen', 5475720308664539, 05, 2024 , 774, IDENT_CURRENT('Customer'))
 
-INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email) VALUES ('Hedegaard', 'Line', 'Strandalléen 8', 5463, 'Harndrup', 53224375, 'LineMHedegaard@fakehotmail.com')
+INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email, [Password]) VALUES ('Hedegaard', 'Line', 'Strandalléen 8', 5463, 'Harndrup', 53224375, 'LineMHedegaard@fakehotmail.com', 'Q8t%RGT3kV-CjZ=2')
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK3350516625784789', 'Line Hedegaard', 5214560905835652, 01, 2021 , 493, IDENT_CURRENT('Customer'))
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK7250517849377686', 'Line Hedegaard', 4532773107905755, 10, 2023 , 530, IDENT_CURRENT('Customer'))
 
-INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email) VALUES ('Bazzi', 'Rugayya', 'Møllevænget 24', 4873, 'Væggerløse', 42283086, 'RuqayyaTharaBazzi@fakehotmail.com')
+INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email, [Password]) VALUES ('Bazzi', 'Rugayya', 'Møllevænget 24', 4873, 'Væggerløse', 42283086, 'RuqayyaTharaBazzi@fakehotmail.com', 'R4yZjcw!DEC7m$3#')
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK6250519764371169', 'Rugayya Bazzi', 4485660756665771, 03, 2024 , 857, IDENT_CURRENT('Customer'))
 
-INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email) VALUES ('Rančnik', 'Cvijan', 'Gammelhavn 76', 3140, 'Ålsgårde', 26687505, 'CvijanRancnik@fakehotmail.com')
+INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email, [Password]) VALUES ('Rančnik', 'Cvijan', 'Gammelhavn 76', 3140, 'Ålsgårde', 26687505, 'CvijanRancnik@fakehotmail.com', '&_f^4sg*VrfFY#Mp')
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK0350515566463364', 'Cvijan Rančnik', 5529544422389963, 02, 2020 , 105, IDENT_CURRENT('Customer'))
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK4850518383819891', 'Cvijan Rančnik', 4532923718662374, 06, 2020 , 580, IDENT_CURRENT('Customer'))
 
-INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email) VALUES ('Bjørdal', 'Vilje', 'Blæsenborgvej 9', 1061, 'København K', 50183662, 'ViljeBjordal@fakehotmail.com')
+INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email, [Password]) VALUES ('Bjørdal', 'Vilje', 'Blæsenborgvej 9', 1061, 'København K', 50183662, 'ViljeBjordal@fakehotmail.com', 'UxCX^$5B4_CA@5xn')
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK5850513196639951', 'Vilje Bjørdal', 4929727444310864, 05, 2023 , 554, IDENT_CURRENT('Customer'))
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK6450518664181419', 'Vilje Bjørdal', 4556249204194537, 02, 2024 , 960, IDENT_CURRENT('Customer'))
 
-INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email) VALUES ('Skaftason', 'Jóhannes', 'Lundevænget 21', 1326, 'København K', 21121924, 'JohannesSkaftason@fakehotmail.com')
+INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email, [Password]) VALUES ('Skaftason', 'Jóhannes', 'Lundevænget 21', 1326, 'København K', 21121924, 'JohannesSkaftason@fakehotmail.com', 's5WR9Jkav_L7Gy3D')
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK7650518594352261', 'Jóhannes Skaftason', 5225584452564884, 09, 2024 , 689, IDENT_CURRENT('Customer'))
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK4050515147436763', 'Jóhannes Skaftason', 5229047503853389, 11, 2022 , 817, IDENT_CURRENT('Customer'))
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK1550518616365375', 'Jóhannes Skaftason', 5248057794606716, 11, 2024 , 351, IDENT_CURRENT('Customer'))
 
-INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email) VALUES ('Mailloux', 'Arianne', 'Hovbanken 68', 3080, 'Tikøb', 71343305, 'ArianneMailloux@fakehotmail.com')
+INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email, [Password]) VALUES ('Mailloux', 'Arianne', 'Hovbanken 68', 3080, 'Tikøb', 71343305, 'ArianneMailloux@fakehotmail.com', 'z&SvDBfs@e2wgx&+')
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK6950519846963924', 'Arianne Mailloux', 5385842456044816, 08, 2023 , 803, IDENT_CURRENT('Customer'))
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK5050518123764795', 'Arianne Mailloux', 4556249204194537, 02, 2024 , 960, IDENT_CURRENT('Customer'))
 
-INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email) VALUES ('Quintero', 'Hidalgo', 'Trollegade 79', 1765, 'København V', 81738189, 'HidalgoBetancourtQuintero@fakehotmail.com')
+INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email, [Password]) VALUES ('Quintero', 'Hidalgo', 'Trollegade 79', 1765, 'København V', 81738189, 'HidalgoBetancourtQuintero@fakehotmail.com', 'q%XZAHfs!36P$a!s')
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK6850518531685167', 'Hidalgo Quintero', 4916893135434523, 08, 2021 , 619, IDENT_CURRENT('Customer'))
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK8550519999833696', 'Hidalgo Quintero', 5106957197361440, 05, 2022 , 370, IDENT_CURRENT('Customer'))
 
-INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email) VALUES ('Christoffersen', 'Malou', 'Møllevænget 66', 3500, 'Værløse', 22337077, 'MalouChristoffersen@fakehotmail.com')
+INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email, [Password]) VALUES ('Christoffersen', 'Malou', 'Møllevænget 66', 3500, 'Værløse', 22337077, 'MalouChristoffersen@fakehotmail.com', 'Ta7SB63%RU4_B7tN')
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK8850512192131952', 'Malou Christoffersen', 5333837084021973, 03, 2024 , 195, IDENT_CURRENT('Customer'))
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK3150511874235169', 'Malou Christoffersen', 5495240317552217, 03, 2021 , 496, IDENT_CURRENT('Customer'))
 
-INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email) VALUES ('Mathiesen', 'Ella', 'Revninge Bygade 42', 7280, 'Sønder Felding', 28493545, 'EllaJMathiesen@fakehotmail.com')
+INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email, [Password]) VALUES ('Mathiesen', 'Ella', 'Revninge Bygade 42', 7280, 'Sønder Felding', 28493545, 'EllaJMathiesen@fakehotmail.com', 'xHN&&NpF5!&h@@89')
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK6450514537563381', 'Ella Mathiesen', 5163407414204015, 02, 2022 , 737, IDENT_CURRENT('Customer'))
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK4450511419814282', 'Ella Mathiesen', 5539970366987611, 11, 2021 , 852, IDENT_CURRENT('Customer'))
 
-INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email) VALUES ('Juhl', 'Valdemar', 'Lersey Allé 70', 1248, 'København K', 50740827, 'ValdemarJuhl@fakehotmail.com')
+INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email, [Password]) VALUES ('Juhl', 'Valdemar', 'Lersey Allé 70', 1248, 'København K', 50740827, 'ValdemarJuhl@fakehotmail.com', 'cqS#uB?$4G=U@wXm')
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK4950515992624567', 'Valdemar Juhl', 5395599210367135, 04, 2024 , 848, IDENT_CURRENT('Customer'))
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK9550515171348213', 'Valdemar Juhl', 4716596015867793, 07, 2023 , 727, IDENT_CURRENT('Customer'))
 
-INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email) VALUES ('Krogh', 'Rebecca', 'Kongshøjvej 97', 1214, 'København K', 21510242, 'RebeccaKrogh@fakehotmail.com')
+INSERT INTO Customer (SurName, [Name], [Address], ZipCode , City, PhoneNo, Email, [Password]) VALUES ('Krogh', 'Rebecca', 'Kongshøjvej 97', 1214, 'København K', 21510242, 'RebeccaKrogh@fakehotmail.com' , 'WguyUVby^3!$nT*!')
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK4650518845281713', 'Rebecca Krogh', 4539802628036452, 02, 2021 , 836, IDENT_CURRENT('Customer'))
 INSERT INTO CreditCard (IBANCode, CreditCardName, CreditCardNumber, CreditCardMonth, CreditCardYear, CCV, FK_CustomerID) Values ( 'DK9750519714844376', 'Rebecca Krogh', 4556492369918080, 01, 2022 , 151, IDENT_CURRENT('Customer'))
 

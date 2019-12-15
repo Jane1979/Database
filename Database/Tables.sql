@@ -1,7 +1,8 @@
+
 USE [Product]
 GO
 
-/****** Object:  Table [dbo].[Customer]    Script Date: 12/1/2019 10:07:22 PM ******/
+/****** Object:  Table [dbo].[Customer]    Script Date: 12/15/2019 6:38:37 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -17,7 +18,8 @@ CREATE TABLE [dbo].[Customer](
 	[City] [nvarchar](100) NOT NULL,
 	[PhoneNo] [int] NOT NULL,
 	[Email] [nvarchar](255) NOT NULL,
-	[TotalAmount] [float],
+	[Password] [nvarchar](255) NOT NULL,
+	[TotalAmount] [decimal](18,2) NOT NULL,
  CONSTRAINT [PK__Customer__A4AE64B85FFC5D60] PRIMARY KEY CLUSTERED 
 (
 	[CustomerID] ASC
@@ -84,7 +86,7 @@ ALTER TABLE [dbo].[Invoice] CHECK CONSTRAINT [FK_Invoice_CreditCard]
 GO
 
 
-/****** Object:  Table [dbo].[Product]    Script Date: 12/1/2019 10:10:24 PM ******/
+/****** Object:  Table [dbo].[Product]    Script Date: 12/15/2019 8:39:28 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -94,17 +96,26 @@ GO
 CREATE TABLE [dbo].[Product](
 	[ProductID] [int] IDENTITY(1,1) NOT NULL,
 	[Name] [nvarchar](50) NOT NULL,
-	[Url] [nvarchar](40) NOT NULL,
+	[Url] [nvarchar](250) NOT NULL,
 	[Description] [ntext] NOT NULL,
 	[UnitPrice] [decimal](18, 2) NOT NULL,
 	[Stock] [int] NOT NULL,
-	[Average_Rating]  [float],
- CONSTRAINT [PK__Product__B40CC6EDF03588C2] PRIMARY KEY CLUSTERED 
+	[Average_Rating] [float] NULL,
+	[ValidFrom] [datetime2](2) GENERATED ALWAYS AS ROW START NOT NULL,
+	[ValidTo] [datetime2](2) GENERATED ALWAYS AS ROW END NOT NULL,
+PRIMARY KEY CLUSTERED 
 (
 	[ProductID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+	PERIOD FOR SYSTEM_TIME ([ValidFrom], [ValidTo])
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+WITH
+(
+SYSTEM_VERSIONING = ON ( HISTORY_TABLE = [dbo].[ProductHistory] )
+)
 GO
+
+
 
 /****** Object:  Table [dbo].[InvoiceLine]    Script Date: 12/1/2019 10:10:58 PM ******/
 SET ANSI_NULLS ON
@@ -139,7 +150,7 @@ GO
 ALTER TABLE [dbo].[InvoiceLine] CHECK CONSTRAINT [FK_InvoiceLine_Product]
 GO
 
-/****** Object:  Table [dbo].[Rating]    Script Date: 12/1/2019 10:11:20 PM ******/
+/****** Object:  Table [dbo].[Rating]    Script Date: 12/15/2019 9:20:31 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -152,11 +163,18 @@ CREATE TABLE [dbo].[Rating](
 	[Comment] [ntext] NOT NULL,
 	[FK_CustomerID] [int] NOT NULL,
 	[FK_ProductID] [int] NOT NULL,
- CONSTRAINT [PK__Rating__FCCDF87C9501D21B] PRIMARY KEY CLUSTERED 
+	[ValidFrom] [datetime2](2) GENERATED ALWAYS AS ROW START NOT NULL,
+	[ValidTo] [datetime2](2) GENERATED ALWAYS AS ROW END NOT NULL,
+PRIMARY KEY CLUSTERED 
 (
-	[RatingId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+	[RatingID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+	PERIOD FOR SYSTEM_TIME ([ValidFrom], [ValidTo])
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+WITH
+(
+SYSTEM_VERSIONING = ON ( HISTORY_TABLE = [dbo].[RatingHistory] )
+)
 GO
 
 ALTER TABLE [dbo].[Rating]  WITH CHECK ADD  CONSTRAINT [FK_Rating_Customer] FOREIGN KEY([FK_CustomerID])
