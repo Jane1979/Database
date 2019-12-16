@@ -100,7 +100,6 @@ CREATE TABLE [dbo].[Product](
 	[Description] [ntext] NOT NULL,
 	[UnitPrice] [decimal](18, 2) NOT NULL,
 	[Stock] [int] NOT NULL,
-	[Average_Rating] [float] NULL,
 	[ValidFrom] [datetime2](2) GENERATED ALWAYS AS ROW START NOT NULL,
 	[ValidTo] [datetime2](2) GENERATED ALWAYS AS ROW END NOT NULL,
 PRIMARY KEY CLUSTERED 
