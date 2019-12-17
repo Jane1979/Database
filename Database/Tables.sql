@@ -99,7 +99,7 @@ CREATE TABLE [dbo].[Product](
 	[Url] [nvarchar](250) NOT NULL,
 	[Description] [ntext] NOT NULL,
 	[UnitPrice] [decimal](18, 2) NOT NULL,
-	[Stock] [int] NOT NULL,
+	[Stock] [int],
 	[ValidFrom] [datetime2](2) GENERATED ALWAYS AS ROW START NOT NULL,
 	[ValidTo] [datetime2](2) GENERATED ALWAYS AS ROW END NOT NULL,
 PRIMARY KEY CLUSTERED 
