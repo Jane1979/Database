@@ -18,6 +18,10 @@ CREATE TABLE Audit_Customer(
 	NewPhoneNo INT NULL,
 	OldEmail NVARCHAR(150) NULL,
 	NewEmail NVARCHAR(150) NULL,
+	OldPassword NVARCHAR(255) NULL,
+	NewPassword NVARCHAR(255) NULL,
+	OldTotalAmount decimal NULL,
+	NewTotalAmount decimal NULL,
 	HostName nvarchar(128) NOT NULL,
 	HostID INT NOT NULL,
 	OperatingSystemUser nvarChar(20) NOT NULL,
@@ -71,18 +75,18 @@ AS
 
 		END
 	IF @operation = 'Delete'
-			INSERT INTO Audit_Customer(CustomerID, OldSurname, OldName, OldAdress, OldZipCode, OldCity, OldPhoneNo, OldEmail, HostName, HostID, OperatingSystemUser, OperatingSystemID, updated_at, operation)
-			SELECT d.CustomerID, d.Surname, d.Name, d.Address, d.ZipCode, d.City, d.PhoneNo, d.Email, SESSION_USER, USER_ID(), SYSTEM_USER, SUSER_ID(), GETDATE(), @operation
+			INSERT INTO Audit_Customer(CustomerID, OldSurname, OldName, OldAdress, OldZipCode, OldCity, OldPhoneNo, OldEmail, OldPassword, OldTotalAmount, HostName, HostID, OperatingSystemUser, OperatingSystemID, updated_at, operation)
+			SELECT d.CustomerID, d.Surname, d.Name, d.Address, d.ZipCode, d.City, d.PhoneNo, d.Email, d.Password, SESSION_USER, USER_ID(), SYSTEM_USER, SUSER_ID(), GETDATE(), @operation
 			FROM deleted d
 
 	IF @operation = 'Insert'
-			INSERT INTO Audit_Customer(CustomerID, NewSurname, NewName, NewAdress, NewZipCode, NewCity, NewPhoneNo, NewEmail, HostName, HostID, OperatingSystemUser, OperatingSystemID, updated_at, operation)
-			SELECT i.CustomerID, i.Surname, i.Name, i.Address, i.ZipCode, i.City, i.PhoneNo, i.Email, SESSION_USER, USER_ID(), SYSTEM_USER, SUSER_ID(), GETDATE(), @operation
+			INSERT INTO Audit_Customer(CustomerID, NewSurname, NewName, NewAdress, NewZipCode, NewCity, NewPhoneNo, NewEmail, NewPassword, NewTotalAmount, HostName, HostID, OperatingSystemUser, OperatingSystemID, updated_at, operation)
+			SELECT i.CustomerID, i.Surname, i.Name, i.Address, i.ZipCode, i.City, i.PhoneNo, i.Email, i.Password, SESSION_USER, USER_ID(), SYSTEM_USER, SUSER_ID(), GETDATE(), @operation
 			FROM inserted i
 
 	IF @operation = 'Update'
-			INSERT INTO Audit_Customer(CustomerID, OldSurname, NewSurname, OldName, NewName, OldAdress, NewAdress, OldZipCode, NewZipCode, OldCity, NewCity, OldPhoneNo, NewPhoneNo, OldEmail, NewEmail, HostName, HostID, OperatingSystemUser, OperatingSystemID, updated_at, operation)
-			SELECT d.CustomerID, d.Surname, i.Surname, d.Name, i.Name, d.Address, i.Address, d.ZipCode, i.ZipCode, d.City, i.City, d.PhoneNo, i.PhoneNo, d.Email, i.Email, SESSION_USER, USER_ID(), SYSTEM_USER, SUSER_ID(), GETDATE(), @operation
+			INSERT INTO Audit_Customer(CustomerID, OldSurname, NewSurname, OldName, NewName, OldAdress, NewAdress, OldZipCode, NewZipCode, OldCity, NewCity, OldPhoneNo, NewPhoneNo, OldEmail, NewEmail, OldPassword, NewPassword, OldTotalAmount, NewTotalAmount, HostName, HostID, OperatingSystemUser, OperatingSystemID, updated_at, operation)
+			SELECT d.CustomerID, d.Surname, i.Surname, d.Name, i.Name, d.Address, i.Address, d.ZipCode, i.ZipCode, d.City, i.City, d.PhoneNo, i.PhoneNo, d.Email, i.Email, d.Password, i.Password, SESSION_USER, USER_ID(), SYSTEM_USER, SUSER_ID(), GETDATE(), @operation
 			FROM deleted d, inserted i
 
 END
