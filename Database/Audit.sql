@@ -76,17 +76,17 @@ AS
 		END
 	IF @operation = 'Delete'
 			INSERT INTO Audit_Customer(CustomerID, OldSurname, OldName, OldAdress, OldZipCode, OldCity, OldPhoneNo, OldEmail, OldPassword, OldTotalAmount, HostName, HostID, OperatingSystemUser, OperatingSystemID, updated_at, operation)
-			SELECT d.CustomerID, d.Surname, d.Name, d.Address, d.ZipCode, d.City, d.PhoneNo, d.Email, d.Password, SESSION_USER, USER_ID(), SYSTEM_USER, SUSER_ID(), GETDATE(), @operation
+			SELECT d.CustomerID, d.Surname, d.Name, d.Address, d.ZipCode, d.City, d.PhoneNo, d.Email, d.Password, d.TotalAmount, SESSION_USER, USER_ID(), SYSTEM_USER, SUSER_ID(), GETDATE(), @operation
 			FROM deleted d
 
 	IF @operation = 'Insert'
 			INSERT INTO Audit_Customer(CustomerID, NewSurname, NewName, NewAdress, NewZipCode, NewCity, NewPhoneNo, NewEmail, NewPassword, NewTotalAmount, HostName, HostID, OperatingSystemUser, OperatingSystemID, updated_at, operation)
-			SELECT i.CustomerID, i.Surname, i.Name, i.Address, i.ZipCode, i.City, i.PhoneNo, i.Email, i.Password, SESSION_USER, USER_ID(), SYSTEM_USER, SUSER_ID(), GETDATE(), @operation
+			SELECT i.CustomerID, i.Surname, i.Name, i.Address, i.ZipCode, i.City, i.PhoneNo, i.Email, i.Password, i.TotalAmount,SESSION_USER, USER_ID(), SYSTEM_USER, SUSER_ID(), GETDATE(), @operation
 			FROM inserted i
 
 	IF @operation = 'Update'
 			INSERT INTO Audit_Customer(CustomerID, OldSurname, NewSurname, OldName, NewName, OldAdress, NewAdress, OldZipCode, NewZipCode, OldCity, NewCity, OldPhoneNo, NewPhoneNo, OldEmail, NewEmail, OldPassword, NewPassword, OldTotalAmount, NewTotalAmount, HostName, HostID, OperatingSystemUser, OperatingSystemID, updated_at, operation)
-			SELECT d.CustomerID, d.Surname, i.Surname, d.Name, i.Name, d.Address, i.Address, d.ZipCode, i.ZipCode, d.City, i.City, d.PhoneNo, i.PhoneNo, d.Email, i.Email, d.Password, i.Password, SESSION_USER, USER_ID(), SYSTEM_USER, SUSER_ID(), GETDATE(), @operation
+			SELECT d.CustomerID, d.Surname, i.Surname, d.Name, i.Name, d.Address, i.Address, d.ZipCode, i.ZipCode, d.City, i.City, d.PhoneNo, i.PhoneNo, d.Email, i.Email, d.Password, i.Password, d.TotalAmount, i.TotalAmount, SESSION_USER, USER_ID(), SYSTEM_USER, SUSER_ID(), GETDATE(), @operation
 			FROM deleted d, inserted i
 
 END
