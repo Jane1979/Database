@@ -4,7 +4,8 @@
   "description": "RESTful games",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +16,8 @@
     "cors": "^2.8.5",
     "express": "^4.15.3",
     "mongoose": "^4.10.2",
+    "msnodesqlv8": "^0.8.6",
     "mssql": "^6.0.1"
-  }
+  },
+  "keywords": []
 }
