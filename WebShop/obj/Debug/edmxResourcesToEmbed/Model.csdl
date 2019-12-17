@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProductModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Audit_CreditCard">
+    <Key>
+      <PropertyRef Name="AuditID" />
+    </Key>
+    <Property Name="AuditID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CreditCardID" Type="Int32" Nullable="false" />
+    <Property Name="OldIBANCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NewIBANCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OldCreditCardName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NewCreditCardName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="OldCreditCardNumber" Type="Int64" />
+    <Property Name="NewCreditCardNumber" Type="Int64" />
+    <Property Name="OldCreditCardMonth" Type="Int32" />
+    <Property Name="NewCreditCardMonth" Type="Int32" />
+    <Property Name="OldCreditCardYear" Type="Int32" />
+    <Property Name="NewCreditCardYear" Type="Int32" />
+    <Property Name="OldCCV" Type="Int32" />
+    <Property Name="NewCCV" Type="Int32" />
+    <Property Name="OldFK_CustomerID" Type="Int32" />
+    <Property Name="NewFK_CustomerID" Type="Int32" />
+    <Property Name="HostName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HostID" Type="Int32" Nullable="false" />
+    <Property Name="OperatingSystemUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OperatingSystemID" Type="Int32" Nullable="false" />
+    <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="operation" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Audit_Customer">
+    <Key>
+      <PropertyRef Name="AuditID" />
+    </Key>
+    <Property Name="AuditID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="OldSurname" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="NewSurname" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="OldName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="NewName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="OldAdress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NewAdress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="OldZipCode" Type="Int32" />
+    <Property Name="NewZipCode" Type="Int32" />
+    <Property Name="OldCity" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NewCity" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="OldPhoneNo" Type="Int32" />
+    <Property Name="NewPhoneNo" Type="Int32" />
+    <Property Name="OldEmail" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="NewEmail" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="OldPassword" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NewPassword" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="OldTotalAmount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="NewTotalAmount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="HostName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HostID" Type="Int32" Nullable="false" />
+    <Property Name="OperatingSystemUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OperatingSystemID" Type="Int32" Nullable="false" />
+    <Property Name="updated_at" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="operation" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CreditCard">
+    <Key>
+      <PropertyRef Name="CreditCardID" />
+    </Key>
+    <Property Name="CreditCardID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IBANCode" Type="String" MaxLength="18" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreditCardName" Type="String" MaxLength="22" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreditCardNumber" Type="Int64" Nullable="false" />
+    <Property Name="CreditCardMonth" Type="Int32" Nullable="false" />
+    <Property Name="CreditCardYear" Type="Int32" Nullable="false" />
+    <Property Name="CCV" Type="Int32" Nullable="false" />
+    <Property Name="FK_CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_CreditCard_Customer" FromRole="CreditCard" ToRole="Customer" />
+    <NavigationProperty Name="Invoices" Relationship="Self.FK_Invoice_CreditCard" FromRole="CreditCard" ToRole="Invoice" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Surname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ZipCode" Type="Int32" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNo" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="CreditCards" Relationship="Self.FK_CreditCard_Customer" FromRole="Customer" ToRole="CreditCard" />
+    <NavigationProperty Name="Ratings" Relationship="Self.FK_Rating_Customer" FromRole="Customer" ToRole="Rating" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="InvoiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FK_CreditCardID" Type="Int32" Nullable="false" />
+    <Property Name="TotalPrice" Type="Decimal" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="TAX" Type="Decimal" Precision="21" Scale="2" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="CreditCard" Relationship="Self.FK_Invoice_CreditCard" FromRole="Invoice" ToRole="CreditCard" />
+    <NavigationProperty Name="InvoiceLines" Relationship="Self.FK_InvoiceLine_Invoice" FromRole="Invoice" ToRole="InvoiceLine" />
+  </EntityType>
+  <EntityType Name="InvoiceLine">
+    <Key>
+      <PropertyRef Name="InvoiceLineID" />
+    </Key>
+    <Property Name="InvoiceLineID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="FK_ProductID" Type="Int32" Nullable="false" />
+    <Property Name="FK_InvoiceID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Invoice" Relationship="Self.FK_InvoiceLine_Invoice" FromRole="InvoiceLine" ToRole="Invoice" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_InvoiceLine_Product" FromRole="InvoiceLine" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Url" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Stock" Type="Int32" Nullable="false" />
+    <Property Name="ValidFrom" Type="DateTime" Nullable="false" Precision="2" />
+    <Property Name="ValidTo" Type="DateTime" Nullable="false" Precision="2" />
+    <NavigationProperty Name="InvoiceLines" Relationship="Self.FK_InvoiceLine_Product" FromRole="Product" ToRole="InvoiceLine" />
+    <NavigationProperty Name="Ratings" Relationship="Self.FK_Rating_Product" FromRole="Product" ToRole="Rating" />
+  </EntityType>
+  <EntityType Name="Rating">
+    <Key>
+      <PropertyRef Name="RatingID" />
+    </Key>
+    <Property Name="RatingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="Int32" Nullable="false" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FK_CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="FK_ProductID" Type="Int32" Nullable="false" />
+    <Property Name="ValidFrom" Type="DateTime" Nullable="false" Precision="2" />
+    <Property Name="ValidTo" Type="DateTime" Nullable="false" Precision="2" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_Rating_Customer" FromRole="Rating" ToRole="Customer" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_Rating_Product" FromRole="Rating" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="v_Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Url" />
+      <PropertyRef Name="Description" />
+      <PropertyRef Name="UnitPrice" />
+      <PropertyRef Name="Stock" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Url" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Stock" Type="Int32" Nullable="false" />
+    <Property Name="Average_rating" Type="Double" />
+  </EntityType>
+  <Association Name="FK_CreditCard_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="CreditCard" Type="Self.CreditCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="CreditCard">
+        <PropertyRef Name="FK_CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoice_CreditCard">
+    <End Role="CreditCard" Type="Self.CreditCard" Multiplicity="1" />
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CreditCard">
+        <PropertyRef Name="CreditCardID" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="FK_CreditCardID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rating_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="FK_CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InvoiceLine_Invoice">
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="1" />
+    <End Role="InvoiceLine" Type="Self.InvoiceLine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Invoice">
+        <PropertyRef Name="InvoiceID" />
+      </Principal>
+      <Dependent Role="InvoiceLine">
+        <PropertyRef Name="FK_InvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InvoiceLine_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="InvoiceLine" Type="Self.InvoiceLine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="InvoiceLine">
+        <PropertyRef Name="FK_ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rating_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="FK_ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProductEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Audit_CreditCard" EntityType="Self.Audit_CreditCard" />
+    <EntitySet Name="Audit_Customer" EntityType="Self.Audit_Customer" />
+    <EntitySet Name="CreditCards" EntityType="Self.CreditCard" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Invoices" EntityType="Self.Invoice" />
+    <EntitySet Name="InvoiceLines" EntityType="Self.InvoiceLine" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="Ratings" EntityType="Self.Rating" />
+    <EntitySet Name="v_Product" EntityType="Self.v_Product" />
+    <AssociationSet Name="FK_CreditCard_Customer" Association="Self.FK_CreditCard_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="CreditCard" EntitySet="CreditCards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoice_CreditCard" Association="Self.FK_Invoice_CreditCard">
+      <End Role="CreditCard" EntitySet="CreditCards" />
+      <End Role="Invoice" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rating_Customer" Association="Self.FK_Rating_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Rating" EntitySet="Ratings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InvoiceLine_Invoice" Association="Self.FK_InvoiceLine_Invoice">
+      <End Role="Invoice" EntitySet="Invoices" />
+      <End Role="InvoiceLine" EntitySet="InvoiceLines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InvoiceLine_Product" Association="Self.FK_InvoiceLine_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="InvoiceLine" EntitySet="InvoiceLines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rating_Product" Association="Self.FK_Rating_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Rating" EntitySet="Ratings" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

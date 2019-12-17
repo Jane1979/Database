@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProductModelStoreContainer" CdmEntityContainer="ProductEntities">
+    <EntitySetMapping Name="Audit_CreditCard">
+      <EntityTypeMapping TypeName="ProductModel.Audit_CreditCard">
+        <MappingFragment StoreEntitySet="Audit_CreditCard">
+          <ScalarProperty Name="AuditID" ColumnName="AuditID" />
+          <ScalarProperty Name="CreditCardID" ColumnName="CreditCardID" />
+          <ScalarProperty Name="OldIBANCode" ColumnName="OldIBANCode" />
+          <ScalarProperty Name="NewIBANCode" ColumnName="NewIBANCode" />
+          <ScalarProperty Name="OldCreditCardName" ColumnName="OldCreditCardName" />
+          <ScalarProperty Name="NewCreditCardName" ColumnName="NewCreditCardName" />
+          <ScalarProperty Name="OldCreditCardNumber" ColumnName="OldCreditCardNumber" />
+          <ScalarProperty Name="NewCreditCardNumber" ColumnName="NewCreditCardNumber" />
+          <ScalarProperty Name="OldCreditCardMonth" ColumnName="OldCreditCardMonth" />
+          <ScalarProperty Name="NewCreditCardMonth" ColumnName="NewCreditCardMonth" />
+          <ScalarProperty Name="OldCreditCardYear" ColumnName="OldCreditCardYear" />
+          <ScalarProperty Name="NewCreditCardYear" ColumnName="NewCreditCardYear" />
+          <ScalarProperty Name="OldCCV" ColumnName="OldCCV" />
+          <ScalarProperty Name="NewCCV" ColumnName="NewCCV" />
+          <ScalarProperty Name="OldFK_CustomerID" ColumnName="OldFK_CustomerID" />
+          <ScalarProperty Name="NewFK_CustomerID" ColumnName="NewFK_CustomerID" />
+          <ScalarProperty Name="HostName" ColumnName="HostName" />
+          <ScalarProperty Name="HostID" ColumnName="HostID" />
+          <ScalarProperty Name="OperatingSystemUser" ColumnName="OperatingSystemUser" />
+          <ScalarProperty Name="OperatingSystemID" ColumnName="OperatingSystemID" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="operation" ColumnName="operation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Audit_Customer">
+      <EntityTypeMapping TypeName="ProductModel.Audit_Customer">
+        <MappingFragment StoreEntitySet="Audit_Customer">
+          <ScalarProperty Name="AuditID" ColumnName="AuditID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="OldSurname" ColumnName="OldSurname" />
+          <ScalarProperty Name="NewSurname" ColumnName="NewSurname" />
+          <ScalarProperty Name="OldName" ColumnName="OldName" />
+          <ScalarProperty Name="NewName" ColumnName="NewName" />
+          <ScalarProperty Name="OldAdress" ColumnName="OldAdress" />
+          <ScalarProperty Name="NewAdress" ColumnName="NewAdress" />
+          <ScalarProperty Name="OldZipCode" ColumnName="OldZipCode" />
+          <ScalarProperty Name="NewZipCode" ColumnName="NewZipCode" />
+          <ScalarProperty Name="OldCity" ColumnName="OldCity" />
+          <ScalarProperty Name="NewCity" ColumnName="NewCity" />
+          <ScalarProperty Name="OldPhoneNo" ColumnName="OldPhoneNo" />
+          <ScalarProperty Name="NewPhoneNo" ColumnName="NewPhoneNo" />
+          <ScalarProperty Name="OldEmail" ColumnName="OldEmail" />
+          <ScalarProperty Name="NewEmail" ColumnName="NewEmail" />
+          <ScalarProperty Name="OldPassword" ColumnName="OldPassword" />
+          <ScalarProperty Name="NewPassword" ColumnName="NewPassword" />
+          <ScalarProperty Name="OldTotalAmount" ColumnName="OldTotalAmount" />
+          <ScalarProperty Name="NewTotalAmount" ColumnName="NewTotalAmount" />
+          <ScalarProperty Name="HostName" ColumnName="HostName" />
+          <ScalarProperty Name="HostID" ColumnName="HostID" />
+          <ScalarProperty Name="OperatingSystemUser" ColumnName="OperatingSystemUser" />
+          <ScalarProperty Name="OperatingSystemID" ColumnName="OperatingSystemID" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+          <ScalarProperty Name="operation" ColumnName="operation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CreditCards">
+      <EntityTypeMapping TypeName="ProductModel.CreditCard">
+        <MappingFragment StoreEntitySet="CreditCard">
+          <ScalarProperty Name="CreditCardID" ColumnName="CreditCardID" />
+          <ScalarProperty Name="IBANCode" ColumnName="IBANCode" />
+          <ScalarProperty Name="CreditCardName" ColumnName="CreditCardName" />
+          <ScalarProperty Name="CreditCardNumber" ColumnName="CreditCardNumber" />
+          <ScalarProperty Name="CreditCardMonth" ColumnName="CreditCardMonth" />
+          <ScalarProperty Name="CreditCardYear" ColumnName="CreditCardYear" />
+          <ScalarProperty Name="CCV" ColumnName="CCV" />
+          <ScalarProperty Name="FK_CustomerID" ColumnName="FK_CustomerID" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="ProductModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invoices">
+      <EntityTypeMapping TypeName="ProductModel.Invoice">
+        <MappingFragment StoreEntitySet="Invoice">
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="FK_CreditCardID" ColumnName="FK_CreditCardID" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="TAX" ColumnName="TAX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvoiceLines">
+      <EntityTypeMapping TypeName="ProductModel.InvoiceLine">
+        <MappingFragment StoreEntitySet="InvoiceLine">
+          <ScalarProperty Name="InvoiceLineID" ColumnName="InvoiceLineID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="FK_ProductID" ColumnName="FK_ProductID" />
+          <ScalarProperty Name="FK_InvoiceID" ColumnName="FK_InvoiceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="ProductModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+          <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+          <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ratings">
+      <EntityTypeMapping TypeName="ProductModel.Rating">
+        <MappingFragment StoreEntitySet="Rating">
+          <ScalarProperty Name="RatingID" ColumnName="RatingID" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="FK_CustomerID" ColumnName="FK_CustomerID" />
+          <ScalarProperty Name="FK_ProductID" ColumnName="FK_ProductID" />
+          <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+          <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_Product">
+      <EntityTypeMapping TypeName="ProductModel.v_Product">
+        <MappingFragment StoreEntitySet="v_Product">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+          <ScalarProperty Name="Average_rating" ColumnName="Average_rating" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

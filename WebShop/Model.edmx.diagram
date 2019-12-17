@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="abb146b513984ee9ab1c6654730f9cd6" Name="Diagram1">
+        <EntityTypeShape EntityType="ProductModel.Audit_CreditCard" Width="1.5" PointX="5.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductModel.Audit_Customer" Width="1.5" PointX="2.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductModel.CreditCard" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductModel.Customer" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductModel.Invoice" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductModel.InvoiceLine" Width="1.5" PointX="7.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductModel.Product" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductModel.Rating" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductModel.v_Product" Width="1.5" PointX="7.75" PointY="8.375" IsExpanded="true" />
+        <AssociationConnector Association="ProductModel.FK_CreditCard_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductModel.FK_Invoice_CreditCard" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductModel.FK_Rating_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductModel.FK_InvoiceLine_Invoice" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductModel.FK_InvoiceLine_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductModel.FK_Rating_Product" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
