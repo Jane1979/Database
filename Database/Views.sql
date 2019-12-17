@@ -10,7 +10,7 @@ GO
 
 CREATE VIEW [dbo].[v_Product]
 AS
-SELECT ProductID, Name, Url, Description, UnitPrice, Stock, dbo.GetAverageRating(ProductID) AS Average_rating
+SELECT ProductID, Name, Url, Description, UnitPrice, Stock, dbo.GetAverageRating(ProductID) AS AverageRating
 FROM     dbo.Product
 GO
 
