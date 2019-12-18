@@ -11,7 +11,35 @@ namespace WebShop
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Email"] != null)
+            {
+                var user = Session["Email"].ToString();
 
+                if (user != null)
+                {
+                    litStatus.Text = Session["Email"].ToString();
+
+                    lnkLogin.Visible = false;
+                    lnkUser.Visible = false;
+
+                    lnkLogout.Visible = true;
+                    litStatus.Visible = true;
+                }
+            }
+            else
+            {
+                lnkLogin.Visible = true;
+                lnkUser.Visible = true;
+
+                lnkLogout.Visible = false;
+                litStatus.Visible = false;
+            }
+        }
+
+        protected void lnkLogout_Click(object sender, EventArgs e)
+        {
+            Session.RemoveAll();
+            Response.Redirect("~/Default.aspx");
         }
     }
 }

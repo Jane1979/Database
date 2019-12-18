@@ -56,3 +56,58 @@
     padding: 20px;
     min-height: 400px;
 }
+
+#ContentPlaceHolder2_panelProducts div{
+    float: left;
+    width: 250px;
+    height: 300px;
+    text-align: center;
+    padding: 5px;
+}
+
+.productImage{
+    height: 200px;
+    vertical-align: central;
+    padding: 10px;
+}
+
+.productName{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.productPrice{
+    font-family: Arial, Arial, Helvetica, sans-serif;
+    color: #0026ff;
+}
+
+.detailsImage{
+    width: 400px;
+    margin-right: 200px;
+}
+
+.detailsDescription{
+    width: 400px;
+    font-style: italic;
+}
+
+.detailsPrice{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.button{
+    padding: 10px;
+    margin: 10px;
+    color: #ffffff;
+    border:0;
+    border-radius: 4px;
+    clear: both;
+    background: linear-gradient(to bottom, darkgreen, green);
+}
+
+#loginTable {
+    text-align: left;
+    padding: 10px;
+    margin: 10px;
+}

@@ -35,7 +35,7 @@ namespace WebShop
                     //Set childControls properties
                     imageButton.ImageUrl = "~/Images/" + product.Url;
                     imageButton.CssClass = "productImage";
-                    imageButton.PostBackUrl = "~/Pages/Product.aspx?id=" + product.ProductID;
+                    imageButton.PostBackUrl = "~/Pages/ProductPage.aspx?id=" + product.ProductID;
 
                     lblName.Text = product.Name;
                     lblName.CssClass = "productName";
