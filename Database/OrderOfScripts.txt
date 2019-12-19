@@ -21,3 +21,4 @@ Change the 2 FILENAME to correspond with the folders on your PC.
 6. Use Views
 7: Use DatabaseSecurity
 8: Use Audit
+9: Use UpdatesStatements
