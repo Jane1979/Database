@@ -139,8 +139,12 @@
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
     <Content Include="Pages\Account\Login.aspx" />
+    <Content Include="Pages\Cart.aspx" />
+    <Content Include="Pages\OrderPage.aspx" />
     <Content Include="Pages\ProductPage.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Pages\ReviewPage.aspx" />
+    <Content Include="Pages\SearchPage.aspx" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -196,6 +200,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartModel.cs" />
+    <Compile Include="Models\CreditCardModel.cs" />
     <Compile Include="Models\InvoiceModel.cs" />
     <Compile Include="Models\CustomerModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
@@ -207,12 +213,40 @@
     <Compile Include="Pages\Account\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OrderPage.aspx.cs">
+      <DependentUpon>OrderPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OrderPage.aspx.designer.cs">
+      <DependentUpon>OrderPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ProductPage.aspx.cs">
       <DependentUpon>ProductPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\ProductPage.aspx.designer.cs">
       <DependentUpon>ProductPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ReviewPage.aspx.cs">
+      <DependentUpon>ReviewPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ReviewPage.aspx.designer.cs">
+      <DependentUpon>ReviewPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SearchPage.aspx.cs">
+      <DependentUpon>SearchPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SearchPage.aspx.designer.cs">
+      <DependentUpon>SearchPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
       <DependentUpon>Model.tt</DependentUpon>

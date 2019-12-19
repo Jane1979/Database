@@ -133,8 +133,8 @@
           <Property Name="Comment" Type="ntext" Nullable="false" />
           <Property Name="FK_CustomerID" Type="int" Nullable="false" />
           <Property Name="FK_ProductID" Type="int" Nullable="false" />
-          <Property Name="ValidFrom" Type="datetime2" Precision="2" Nullable="false" />
-          <Property Name="ValidTo" Type="datetime2" Precision="2" Nullable="false" />
+          <Property Name="ValidFrom" Type="datetime2" Precision="2" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ValidTo" Type="datetime2" Precision="2" Nullable="false" StoreGeneratedPattern="Identity" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Product.dbo.v_Product' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -415,8 +415,8 @@ warning 6002: The table/view 'Product.dbo.v_Product' does not have a primary key
           <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="FK_CustomerID" Type="Int32" Nullable="false" />
           <Property Name="FK_ProductID" Type="Int32" Nullable="false" />
-          <Property Name="ValidFrom" Type="DateTime" Nullable="false" Precision="2" />
-          <Property Name="ValidTo" Type="DateTime" Nullable="false" Precision="2" />
+          <Property Name="ValidFrom" Type="DateTime" Nullable="false" Precision="2" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ValidTo" Type="DateTime" Nullable="false" Precision="2" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Customer" Relationship="Self.FK_Rating_Customer" FromRole="Rating" ToRole="Customer" />
           <NavigationProperty Name="Product" Relationship="Self.FK_Rating_Product" FromRole="Rating" ToRole="Product" />
         </EntityType>

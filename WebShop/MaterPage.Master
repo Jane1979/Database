@@ -5,7 +5,7 @@
 <html>
 <head runat="server">
     <title>Game Web Shop</title>
-    <link href="~/Styles/StyleSheet.css" rel="stylesheet" type="text/css" runat="server"/>
+    <link href="~/Styles/StyleSheet.css" rel="stylesheet" type="text/css" runat="server" />
     <script src="Scripts/jquery-3.4.1.min.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -19,14 +19,23 @@
                 </div>
                 <div id="navigation">
                     <ul id="nav">
-                        <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">Products</asp:HyperLink></li>
-                        
-                        <li style="float:right">
+                        <li>
+                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">Products</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink2" NavigateUrl="~/Pages/ReviewPage.aspx" runat="server">Reviews</asp:HyperLink>
+                        </li>
+                        <li style="float: right">
+                            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Pages/SearchPage.aspx">Search</asp:HyperLink></li>
+                        <li>
+
+                        <li style="float: right">
                             <asp:HyperLink ID="lnkUser" runat="server"></asp:HyperLink>
                             <asp:HyperLink ID="litStatus" runat="server"></asp:HyperLink>
+                        </li>                        
+                        <li style="float: right">
+                            <asp:HyperLink ID="lnkCart" NavigateUrl="~/Pages/Cart.aspx" runat="server">Cart</asp:HyperLink>
                         </li>
-
-                        <li style="float:right">
+                        <li style="float: right">
                             <asp:HyperLink ID="lnkLogin" NavigateUrl="~/Pages/Account/Login.aspx" runat="server">Login</asp:HyperLink>
                             <asp:LinkButton ID="lnkLogout" runat="server" OnClick="lnkLogout_Click">Logout</asp:LinkButton>
                         </li>

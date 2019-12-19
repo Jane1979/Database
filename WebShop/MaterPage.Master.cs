@@ -24,6 +24,7 @@ namespace WebShop
 
                     lnkLogout.Visible = true;
                     litStatus.Visible = true;
+                    lnkCart.Visible = true;
                 }
             }
             else
@@ -31,6 +32,7 @@ namespace WebShop
                 lnkLogin.Visible = true;
                 lnkUser.Visible = true;
 
+                lnkCart.Visible = false;
                 lnkLogout.Visible = false;
                 litStatus.Visible = false;
             }

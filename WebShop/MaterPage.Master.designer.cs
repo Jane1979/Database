@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebShop
-{
-
-
-    public partial class MaterPage
-    {
-
+namespace WebShop {
+    
+    
+    public partial class MaterPage {
+        
         /// <summary>
         /// head control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace WebShop
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
-
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace WebShop
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// Image1 control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace WebShop
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image Image1;
-
+        
         /// <summary>
         /// HyperLink1 control.
         /// </summary>
@@ -49,7 +47,25 @@ namespace WebShop
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
-
+        
+        /// <summary>
+        /// HyperLink2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
+        
+        /// <summary>
+        /// HyperLink3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink3;
+        
         /// <summary>
         /// lnkUser control.
         /// </summary>
@@ -58,7 +74,7 @@ namespace WebShop
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink lnkUser;
-
+        
         /// <summary>
         /// litStatus control.
         /// </summary>
@@ -67,7 +83,16 @@ namespace WebShop
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink litStatus;
-
+        
+        /// <summary>
+        /// lnkCart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkCart;
+        
         /// <summary>
         /// lnkLogin control.
         /// </summary>
@@ -76,7 +101,7 @@ namespace WebShop
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink lnkLogin;
-
+        
         /// <summary>
         /// lnkLogout control.
         /// </summary>
@@ -85,7 +110,7 @@ namespace WebShop
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkLogout;
-
+        
         /// <summary>
         /// ContentPlaceHolder2 control.
         /// </summary>
