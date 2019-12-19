@@ -40,5 +40,44 @@ namespace WebShop.Models
             }
         }
 
+        public static List<v_Product> SearchProducts(string searchString)
+        {
+            try
+            {
+                using (ProductEntities db = new ProductEntities())
+                {
+                    List<v_Product> products = db.v_Product
+                        .Where(p => p.Name.ToLower().Contains(searchString.ToLower()) || 
+                                    p.Description.Contains(searchString) ||
+                                    p.Url.ToLower().Contains(searchString.ToLower()) ||
+                                    p.UnitPrice.ToString() == searchString ||
+                                    p.Stock.ToString() == searchString)
+                        .ToList();
+
+                    return products;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public static v_Product Get_Product(int id)
+        {
+            try
+            {
+                using (ProductEntities db = new ProductEntities())
+                {
+                    v_Product product = db.v_Product.FirstOrDefault(p => p.ProductID == id);
+
+                    return product;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
     }
 }

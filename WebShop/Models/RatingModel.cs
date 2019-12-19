@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.Entity;
 
 namespace WebShop.Models
 {
@@ -22,6 +23,8 @@ namespace WebShop.Models
                 return "Error: " + e;
             }
         }
+
+
 
         public string UpdateRating(int id, Rating rating)
         {
@@ -63,6 +66,58 @@ namespace WebShop.Models
             catch (Exception e)
             {
                 return "Error: " + e;
+            }
+        }
+
+        public Rating GetRating(int id)
+        {
+            try
+            {
+                using (ProductEntities db = new ProductEntities())
+                {
+                    Rating rating = db.Ratings.Find(id);
+                    return rating;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public List<Rating> GetAllRatings()
+        {
+            try
+            {
+                using (ProductEntities db = new ProductEntities())
+                {
+                    List<Rating> rating = (from x in db.Ratings select x).ToList();
+
+                    return rating;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public List<Rating> GetAllRatings(int id)
+        {
+            try
+            {
+                ProductEntities db = new ProductEntities();
+
+                    List<Rating> rating = (from x in db.Ratings.Include(x => x.Product)
+                                           where x.FK_CustomerID == id
+                                           select x).ToList();
+
+                    return rating;
+
+            }
+            catch (Exception)
+            {
+                return null;
             }
         }
     }

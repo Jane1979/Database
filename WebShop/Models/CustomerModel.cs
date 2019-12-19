@@ -40,5 +40,21 @@ namespace WebShop.Models
             }
         }
 
+        public static Customer GetCustomer(string username, string password)
+        {
+            try
+            {
+                using (ProductEntities db = new ProductEntities())
+                {
+                    Customer customer = db.Customers.FirstOrDefault(x => x.Email.ToLower() == username.ToLower() && x.Password == password);
+
+                    return customer;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
     }
 }

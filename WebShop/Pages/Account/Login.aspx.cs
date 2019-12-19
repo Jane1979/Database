@@ -25,30 +25,18 @@ namespace WebShop.Pages.Account
             string username = TextBox1.Text;
             string password = TextBox2.Text;
 
-            if (username != null && password != null)
+            Customer customer = CustomerModel.GetCustomer(username, password);
+
+            if(customer != null)
             {
-                foreach (Customer c in customers)
-                {
-                    var email = customers.Exists(x => x.Email == username);
-                    var loginpass = customers.Exists(x => x.Password == password);
+                Session["Email"] = customer.Email;
+                Session.Add("CustomerID", customer.CustomerID);
+                Response.Redirect("~/Default.aspx");
 
-                    if (email == true && loginpass == true)
-                    {
-                        Session["Email"] = TextBox1.Text;
-                        Session.Add("CustomerID", c.CustomerID);
-                        Response.Redirect("~/Default.aspx");
-                    }
-                    else
-                    {
-                        Label1.Text = "You're username and word is incorrect";
-                        Label1.ForeColor = System.Drawing.Color.Red;
-                    }                    
-
-                }
             }
             else 
             {
-                Label1.Text = "You're username and word is incorrect";
+                Label1.Text = "Your username or password is incorrect";
                 Label1.ForeColor = System.Drawing.Color.Red;
             }
 

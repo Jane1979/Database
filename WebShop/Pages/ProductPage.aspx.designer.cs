@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebShop.Pages
-{
-
-
-    public partial class ProductPage
-    {
-
+namespace WebShop.Pages {
+    
+    
+    public partial class ProductPage {
+        
         /// <summary>
         /// imgProduct control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace WebShop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgProduct;
-
+        
         /// <summary>
         /// lblTitle control.
         /// </summary>
@@ -31,7 +29,25 @@ namespace WebShop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTitle;
-
+        
+        /// <summary>
+        /// LabelRating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelRating;
+        
+        /// <summary>
+        /// LiteralRating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal LiteralRating;
+        
         /// <summary>
         /// lblDescription control.
         /// </summary>
@@ -40,7 +56,7 @@ namespace WebShop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDescription;
-
+        
         /// <summary>
         /// lblPrice control.
         /// </summary>
@@ -49,7 +65,7 @@ namespace WebShop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPrice;
-
+        
         /// <summary>
         /// ddlAmount control.
         /// </summary>
@@ -58,7 +74,7 @@ namespace WebShop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlAmount;
-
+        
         /// <summary>
         /// btnAdd control.
         /// </summary>
@@ -67,7 +83,16 @@ namespace WebShop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAdd;
-
+        
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
         /// <summary>
         /// lblResult control.
         /// </summary>
@@ -76,7 +101,7 @@ namespace WebShop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblResult;
-
+        
         /// <summary>
         /// lblItemNr control.
         /// </summary>
@@ -85,5 +110,41 @@ namespace WebShop.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblItemNr;
+        
+        /// <summary>
+        /// PanelRating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelRating;
+        
+        /// <summary>
+        /// DropDownListRating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListRating;
+        
+        /// <summary>
+        /// TextBoxComment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxComment;
+        
+        /// <summary>
+        /// ButtonSubmitRating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonSubmitRating;
     }
 }
